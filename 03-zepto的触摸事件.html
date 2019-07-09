@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+        }
+
+        span {
+            background-color: red;
+            color: #fff;
+            padding: 5px;
+            font-size: 12px;
+            margin-left: 25px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    小郑郑接收
+    < div  id = “box”>
+        <ul>
+            <li>
+                社会新闻
+                <span>DELETE</span>
+            </li>
+            <li>
+                体育新闻
+                <span>DELETE</span>
+            </li>
+        </ul>
+    </div>
+    <!-- <script src="./zepto.js"></script> -->
+    <script src="./src/zepto.js"></script>
+    <!-- <script src="./src/callbacks.js"></script> -->
+    <script src="./src/event.js"></script>
+    <script src="./src/touch.js"></script>
+    <script>
+        $(function () {
+            // $('#box li').swipeLeft(function () {
+            //     console.log(2)
+            // })
+            $('#box li').swipeLeft(function () {
+                $(this).find('span').show()
+            })
+            $('span').tap(function () {
+                $(this).parent().hide()
+            })
+        })
+    </script>
+</body>
+
+</html>
